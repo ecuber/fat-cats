@@ -1,6 +1,7 @@
 import requests
 import json
 import re
+from sys import exit
 from dotenv import load_dotenv
 import os
 load_dotenv()
@@ -55,16 +56,12 @@ def show_cats(params, credentials):
     for i, cat in enumerate(cats):
         print(f"{i + 1}: {cat['name']} {cat['url']}")
 
-    repeat = ""
-    while repeat.lower() != "y" and repeat.lower != "quit":
-        repeat = input("\nSearch again? Type \"y\" or \"quit\": ")
-        if repeat.lower() == "y":
-            show_cats(params, credentials)
-        elif repeat.lower() == "quit":
-            print("Goodbye!")
-            quit()
-        else:
-            print("Invalid input.")
+    repeat = input("\nSearch again? Enter \"y\" to continue or any other key to quit: ") 
+    if repeat.lower() == "y":
+        show_cats(params, credentials)
+    else:
+        print("Goodbye!")
+        exit()
     
 
 show_cats(params, credentials)
