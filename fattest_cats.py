@@ -31,7 +31,7 @@ print(f"Searching for THICC cats within 25 mile radius of {locale}...")
 
 params = (
     ("location", locale),
-    ("type", "cats"),
+    ("type", "cat"),
     ("size", "large,xlarge"),
     ("distance", "25"),
     ("limit", "10"),
@@ -63,6 +63,8 @@ def show_cats(params, credentials):
         elif repeat.lower() == "quit":
             print("Goodbye!")
             quit()
+        else:
+            print("Invalid input.")
     
 
 show_cats(params, credentials)
