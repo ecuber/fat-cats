@@ -1,2 +1,6 @@
 
 .env
+build/
+.vscode/
+__pycache__/
+fattest_cats.spec
